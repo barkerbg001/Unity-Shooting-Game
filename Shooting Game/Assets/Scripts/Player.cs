@@ -20,10 +20,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Movement input
         Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;
         controller.Move (moveVelocity);
 
+        // Look input
         Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
         Plane groundPlane = new Plane (Vector3.up, Vector3.zero);
         float rayDistance;
@@ -33,5 +35,7 @@ public class Player : MonoBehaviour
             //Debug.DrawLine(ray.origin, point, Color.red);
             controller.LookAt(point);
         }
+
+        // Weapon input
     }
 }
