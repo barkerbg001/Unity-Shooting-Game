@@ -7,15 +7,13 @@ public class Enemy : MonoBehaviour
 {
     UnityEngine.AI.NavMeshAgent pathfinder;
     Transform target;
-    // Start is called before the first frame update
-    void Start()
-    {
+
+    void Start() {
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        pathfinder.SetDestination(target.position);
     }
 }
