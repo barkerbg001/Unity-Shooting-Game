@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof (PlayerController))]
+[RequireComponent (typeof (GunController))]
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5;
 
     Camera viewCamera;
     PlayerController controller;
+    GunController gunController;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<PlayerController>();
+        gunController = GetComponent<GunController>();
         viewCamera = Camera.main;
     }
 
@@ -37,5 +40,8 @@ public class Player : MonoBehaviour
         }
 
         // Weapon input
+        if (Input.GetMouseButton(0)){
+            gunController.Shoot();
+        }
     }
 }
