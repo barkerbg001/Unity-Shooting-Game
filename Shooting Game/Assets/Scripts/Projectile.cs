@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     float damage = 1;
 
     float lifetime = 3;
+    float skinWidth = .1f;
 
     void Start(){
         Destroy (gameObject, lifetime);
@@ -33,7 +34,7 @@ public class Projectile : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, moveDistance, collisionMask, QueryTriggerInteraction.Collide)){
+        if(Physics.Raycast(ray, out hit, moveDistance + skinWidth, collisionMask, QueryTriggerInteraction.Collide)){
             OnHitObject(hit);
         }
     }
