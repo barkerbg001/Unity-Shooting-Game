@@ -15,7 +15,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     }
 
     public void TakeHit(float damage, RaycastHit hit){
-        //Do some stuff here with hit
+        //Do some stuff here with hit variable
         TakeDamage(damage);
     }
 
