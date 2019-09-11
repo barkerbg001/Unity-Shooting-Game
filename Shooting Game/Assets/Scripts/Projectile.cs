@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     void Start(){
         Destroy (gameObject, lifetime);
 
-        collider[] initialCollisions = Physics.OverlapSphere (transform.position, .1f, collisionMask);
+        Collider[] initialCollisions = Physics.OverlapSphere (transform.position, .1f, collisionMask);
         if (initialCollisions.Length > 0){
             OnHitObject(initialCollisions[0]);
         }
@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
         GameObject.Destroy (gameObject);
     }
 
-    void OnHitObject (collider c){
+    void OnHitObject (Collider c){
         IDamageable damageableObject = c.GetComponent<IDamageable>();
 
         if(damageableObject != null){
