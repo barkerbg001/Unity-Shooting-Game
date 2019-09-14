@@ -240,8 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ed65150f919be41b95f4e2132e087e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 0}
-  mapSize: {x: 0, y: 0}
+  tilePrefab: {fileID: 7134812487410819334, guid: 9e8a4f8c835aef84aa4bbc8ec4ed9315,
+    type: 3}
+  mapSize: {x: 10, y: 10}
 --- !u!4 &1532670035
 Transform:
   m_ObjectHideFlags: 0
